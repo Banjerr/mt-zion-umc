@@ -1,0 +1,561 @@
+/*
+ Theme Name:   Mt Zion UMC
+ Description:  Child theme of TwentySeventeen, customized for Mt Zion UMC
+ Author:       Ben Redden
+ Author URI:   http://countryfriedcoders.me
+ Template:     twentyseventeen
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-seventeed-child
+*/
+
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto');
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+/* UNIVERSAL */
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  transition: all .3s ease-in !important;
+}
+
+::selection {
+  background: #000; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: #000; /* Gecko Browsers */
+  color: #fff;
+}
+
+button, form input[type="submit"] {
+  transition: all .3s ease-in !important;
+  border: 1px solid #000;
+  color: #fff !important;
+}
+
+button:hover, input[type="submit"] {
+  background: #fff;
+  color: #000 !important;
+  border: 1px solid #000;
+}
+
+.search-form .search-submit {
+  bottom: 3px;
+  padding: 3% 4%;
+  position: absolute;
+  right: 3px;
+  top: inherit;
+  text-align: center;
+}
+
+.search-form .search-submit:hover, .search-form .search-submit:active, .search-form .search-submit:focus {
+  -webkit-transform: initial;
+  transform: initial;
+}
+
+.search-form .search-submit:after:hover, .search-form .search-submit:after:active, .search-form .search-submit:after:focus {
+  opacity: 0;
+  -webkit-transform: initial;
+  transform: initial;
+}
+
+.search-form .search-submit:after:hover, .search-form .search-submit:after:active, .search-form .search-submit:after:focus {
+  -webkit-transform: initial;
+    transform: initial;
+}
+
+.single-post:not(.has-sidebar) #primary, .page.page-one-column:not(.twentyseventeen-front-page) #primary, .archive.page-one-column:not(.has-sidebar) .page-header, .archive.page-one-column:not(.has-sidebar) #primary {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+}
+
+/* HOVER EFFECTS */
+
+/* Rectangle In */
+.hvr-rectangle-in, button, input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  background: #000;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-rectangle-in:before, button:before, input[type="submit"]:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-rectangle-in:hover, button:hover, button:focus, button:active .hvr-rectangle-in:focus, .hvr-rectangle-in:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
+  color: white;
+}
+.hvr-rectangle-in:hover:before, .hvr-rectangle-in:focus:before, button:hover:before, button:focus:before, button:active:before, .hvr-rectangle-in:active:before, input[type="submit"]:hover:before, input[type="submit"]:focus:before, input[type="submit"]:active:before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+/* Float Shadow */
+.hvr-float-shadow, button, input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;*/
+}
+.hvr-float-shadow:after, button:after, input[type="submit"]:after {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+  /* W3C */
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;*/
+}
+.hvr-float-shadow:hover, button:hover, button:focus, button:active, .hvr-float-shadow:focus, .hvr-float-shadow:active, input[type="submit"]:focus, input[type="submit"]:active, input[type="submit"]:hover {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:after, button:hover:after, button:focus:after, button:active:after, .hvr-float-shadow:focus:after, .hvr-float-shadow:active:after, input[type="submit"]:hover:after, input[type="submit"]:focus:after, input[type="submit"]:active:after {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+/* HEADER / FOOTER */
+
+.site-footer {
+  margin-top: 0;
+  background: url('assets/img/bg/chruch_@2X.png');
+  border-top: 1px solid #eee;
+}
+
+.site-footer .wrap {
+  padding-bottom: 1.5em;
+  padding-top: 2em;
+  background: rgba(255, 255, 255, 0.47);
+  max-width: 962px;
+}
+
+.page-one-column .panel-content .wrap {
+  overflow: hidden;
+}
+
+.panel-content .wrap {
+  background: #fff;
+  box-shadow: 0 0 9px -1px #000;
+}
+
+.twentyseventeen-front-page .site-content {
+  padding: 13em 0 0;
+  background: url('assets/img/bg/lightpaperfibers_@2X.png');
+}
+
+.main-navigation .menu .home {
+  padding: 0 6% 0 0 !important;
+  float: left;
+}
+
+.main-navigation .menu .home a {
+  background: url('assets/img/mt-zion-logo.png');
+  background-size: cover;
+  text-indent: -9999px;
+  height: 200px;
+  width: 250px;
+  vertical-align: middle;
+}
+
+.main-navigation li {
+  vertical-align: middle;
+  float: right;
+  padding: 7% 0 0;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.main-navigation li a {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.sub-menu li {
+  padding: 2% 0 !important;
+}
+
+.twentyseventeen-front-page.has-header-image .custom-header-media, .twentyseventeen-front-page.has-header-video .custom-header-media, .home.blog.has-header-image .custom-header-media, .home.blog.has-header-video .custom-header-media {
+  height: 100% !important;
+}
+
+.has-header-image.twentyseventeen-front-page .custom-header, .has-header-video.twentyseventeen-front-page .custom-header, .has-header-image.home.blog .custom-header, .has-header-video.home.blog .custom-header {
+  display: table !important;
+}
+
+html .has-header-image.twentyseventeen-front-page .custom-header, html .has-header-video.twentyseventeen-front-page .custom-header, html .has-header-image.home.blog .custom-header, html .has-header-video.home.blog .custom-header {
+  height: 50vh;
+}
+
+.site-header .site-branding {
+  text-align: center;
+  color: #ffffff;
+}
+
+.site-header .site-title {
+    font-weight: 100;
+    letter-spacing: 4px;
+}
+
+.site-header .site-branding .cta .largeText {
+  font-size: 32px;
+  vertical-align: middle;
+}
+
+.site-header .site-branding h2, .site-header .site-branding h3, .site-header .site-branding h4 {
+  color: #ffffff;
+}
+
+.site-header .site-branding a:hover {
+  color: #000000;
+}
+
+.site-header .site-branding h4 {
+  padding: 0;
+}
+
+/* PASTORS BLOG PAGE/ACADEMY BLOG PAGE */
+
+.category-pastors-corner .wrap div#primary, .category-kids-corner .wrap div#primary {
+  width: 66%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.category-pastors-corner .wrap div#primary-sidebar, .category-kids-corner .wrap div#primary-sidebar {
+  display: inline-block;
+  width: 33.33333%;
+}
+
+.category-pastors-corner .single-featured-image.pull-left, .category-kids-corner .single-featured-image.pull-left {
+  margin: 0 4% 0 0;
+}
+
+/* FOOTER */
+
+.fab-btn {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  background: #000;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 1% 2%;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all .3s ease-in;
+  z-index: 10;
+  border: 1px solid #000;
+  box-shadow: 0 0 12px #000;
+}
+
+.fab-btn:hover {
+  color: #000;
+  background: #fff;
+}
+
+/* LIGHTBOX */
+
+.lightboxBG {
+  position: fixed;
+  background: #000;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: none;
+  z-index: 10;
+  opacity: .8;
+}
+
+.lightbox {
+  position: fixed;
+  display: none;
+  top: 10%;
+  transition: all .3s ease-in;
+  left: 0;
+  right: 0;
+  max-height: 100%;
+  margin: auto;
+  max-width: 749px;
+  padding: 0;
+  z-index: 15;
+  bottom: 0;
+  margin: auto;
+  height: auto;
+}
+
+.lightbox .wrap {
+  background: #fff;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 90%;
+  border-radius: 6px;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  max-width: 96%;
+}
+
+.lightbox form button, form button {
+  padding: 2% 7% 2% 4%;
+  margin: 4% 0 0;
+}
+
+.lightbox form button i:before, form button i:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 18px;
+  font-size: 18px;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+.lightbox form button:hover i:before, .lightbox form button:focus i:before, .lightbox form button:active i:before, form button:hover i:before, form button:focus i:before, form button:active i:before {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.lightbox .closeBtn {
+  position: absolute;
+  right: -17px;
+  top: -17px;
+  width: 32px;
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 0;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.slick-arrow:active:before, .slick-arrow:focus:before, .slick-arrow:hover:before {
+  -webkit-transform: scale(1); 
+  transform: scale(1);
+}
+
+.slick-arrow:active:after, .slick-arrow:focus:after, .slick-arrow:hover:after {
+  content: none;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 30em) {
+  .page-one-column .panel-content .wrap {
+    max-width: 960px;
+  }
+
+  .home.blog .entry-title, .page .panel-content .recent-posts .entry-title {
+      font-size: 3.625rem;
+  }
+
+  .home .site-header .site-branding .cta h4 {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .site-header .menu-scroll-down {
+      color: #fff;
+      bottom: 0;
+      padding-bottom: 0;
+      top: initial;
+  }
+
+  .has-sidebar #secondary {
+    float: right;
+    padding-top: 0;
+    width: 33.3333%;
+  }
+
+  .site-title {
+    font-size: 4rem;
+  }
+
+  .site-content {
+    padding: 16.5em 0 0;
+  }
+
+  .panel-content .wrap {
+    padding-bottom: 4.5em;
+    padding-top: 2em;
+  }
+
+  .wrap {
+    max-width: 960px;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+}
+
+@media all and (max-width: 864px) {
+  .has-header-image.twentyseventeen-front-page .site-branding, .has-header-video.twentyseventeen-front-page .site-branding, .has-header-image.home.blog .site-branding, .has-header-video.home.blog .site-branding {
+    padding: 0;
+    height: 400px;
+    top: 14%;
+    bottom: initial;
+    vertical-align: top;
+  }
+
+  .lightbox form button {
+    display: block;
+    width: 100%;
+  }
+
+  .lightbox .closeBtn {
+    right: 12px;
+    top: 0;
+  }
+
+  .site-header .site-branding h2 {
+    font-size: 20px;
+  }
+
+  .home .site-header .site-branding .cta h4 {
+    font-size: 16px;
+  }
+
+  .custom-header .site-branding h1 {
+    font-size: 28px;
+  }
+
+  .navigation-top .wrap {
+    max-width: 1200px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .has-header-image.twentyseventeen-front-page .custom-header, .has-header-video.twentyseventeen-front-page .custom-header, .has-header-image.home.blog .custom-header, .has-header-video.home.blog .custom-header {
+    display: table;
+    height: 100% !important;
+    width: 100%;
+    padding: 4% 0;
+  }
+
+  .admin-bar.twentyseventeen-front-page.has-header-image .custom-header-media, .admin-bar.twentyseventeen-front-page.has-header-video .custom-header-media, .admin-bar.home.blog.has-header-image .custom-header-media, .admin-bar.home.blog.has-header-video .custom-header-media {
+    height: 100% !important;
+  }
+
+  .has-header-image.twentyseventeen-front-page .site-branding, .has-header-video.twentyseventeen-front-page .site-branding, .has-header-image.home.blog .site-branding, .has-header-video.home.blog .site-branding {
+    height: 100% !important;
+  }
+}
+
+@media all and (max-width: 420px) {
+  .site-header .site-branding h2 {
+    font-size: 16px;
+  }
+
+  .home .site-header .site-branding .cta h4 {
+    font-size: 15px;
+  }
+
+  .site-header .site-branding .cta .largeText {
+    font-size: 22px;
+    vertical-align: middle;
+  }
+
+  .custom-header .site-branding h1 {
+    font-size: 24px;
+  }
+
+  .elementor-progress-text {
+    padding-left: 10px !important;
+    font-size: 8px !important;
+  }
+
+  .elementor-progress-percentage {
+    padding-right: 6px !important;
+    font-size: 9px !important;
+  }
+
+  .pushNavBtn {
+    z-index: 9;
+    position: fixed;
+    top: 6%;
+    left: 1%;
+    padding: 3%;
+  }
+
+  .site-header .site-title {
+    font-weight: 100;
+    letter-spacing: 4px;
+    font-size: 22px;
+  }
+}
+
+.admin-bar.twentyseventeen-front-page.has-header-image .custom-header-media, .admin-bar.twentyseventeen-front-page.has-header-video .custom-header-media, .admin-bar.home.blog.has-header-image .custom-header-media, .admin-bar.home.blog.has-header-video .custom-header-media {
+    height: calc(50vh - 32px);
+}
