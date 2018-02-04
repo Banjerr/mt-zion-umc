@@ -184,6 +184,16 @@
 			adjustScrollClass();
 		}
 
+		jQuery("footer .sub-menu").hide();
+    // jQuery("footer .current_page_item .sub-menu").show();
+    // jQuery("footer li.menu-item").hover(function () { // mouse enter
+		// 	jQuery(this).find(".sub-menu").show(); // display child
+    // }, function () { // mouse leave
+		// 	if (!jQuery(this).hasClass(".current_page_item")) { // check if current page
+		// 		jQuery(this).find("footer .sub-menu").hide(); // hide if not current page
+		// 	}
+    // });
+
 		// If 'Scroll Down' arrow in present on page, calculate scroll offset and bind an event handler to the click event.
 		if ( $menuScrollDown.length ) {
 

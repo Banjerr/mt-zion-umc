@@ -186,11 +186,22 @@ button:hover, input[type="submit"] {
   border-top: 1px solid #eee;
 }
 
+header .mobile-home {
+  background: url(assets/img/mt-zion-logo.png);
+  background-size: cover;
+  text-indent: -9999px;
+  height: 100px;
+  width: 125px;
+  display: none;
+}
+
 .site-footer .wrap {
   padding-bottom: 1.5em;
   padding-top: 2em;
   background: rgba(255, 255, 255, 0.47);
   max-width: 962px;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .page-one-column .panel-content .wrap {
@@ -294,6 +305,20 @@ html .has-header-image.twentyseventeen-front-page .custom-header, html .has-head
 }
 
 /* FOOTER */
+
+footer .footer-widget-2 ul {
+  text-align: right;
+}
+
+footer .footer-widget-2 ul li {
+  border-top: none;
+  border-bottom: none;
+}
+
+footer .widget_mc4wp_form_widget {
+  text-align: right;
+  float: right;
+}
 
 .fab-btn {
   position: fixed;
@@ -434,6 +459,10 @@ html .has-header-image.twentyseventeen-front-page .custom-header, html .has-head
       top: initial;
   }
 
+  .site-info {
+    float: right;
+  }
+
   .has-sidebar #secondary {
     float: right;
     padding-top: 0;
@@ -457,6 +486,16 @@ html .has-header-image.twentyseventeen-front-page .custom-header, html .has-head
     max-width: 960px;
     padding: 0 10px;
     margin: 0 auto;
+  }
+
+  .site-footer .widget-column.footer-widget-1 {
+    float: left;
+    width: 50%;
+  }
+
+  .site-footer .widget-column.footer-widget-2 {
+    float: right;
+    width: 50%;
   }
 }
 
@@ -510,6 +549,47 @@ html .has-header-image.twentyseventeen-front-page .custom-header, html .has-head
 
   .has-header-image.twentyseventeen-front-page .site-branding, .has-header-video.twentyseventeen-front-page .site-branding, .has-header-image.home.blog .site-branding, .has-header-video.home.blog .site-branding {
     height: 100% !important;
+  }
+
+  header .menu .home {
+    display: none;
+  }
+
+  header .mobile-home {
+    display: block;
+    margin: 0 auto;
+  }
+
+  header .main-navigation li {
+    float: none;
+  }
+
+  header button.menu-toggle.pull-right {
+    position: absolute;
+    top: 24px;
+    left: 10px;
+  }
+
+  header .dropdown-toggle {
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #222;
+    display: block;
+    font-size: 16px;
+    right: initial;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0.5em;
+    position: absolute;
+    text-shadow: none;
+    top: 24px;
+    left: 114px;
+  }
+
+  .twentyseventeen-front-page .site-content {
+    padding: 0em 0 0;
   }
 }
 
